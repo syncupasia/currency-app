@@ -1,3 +1,7 @@
 <template>
-<div>Home page</div>
+<CurrenciesTable />
 </template>
+
+<script setup>
+import CurrenciesTable from '../components/CurrenciesTable.vue'
+</script>

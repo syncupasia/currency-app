@@ -25,7 +25,7 @@
 
 <script setup>
 
-import { useRouter } from "vue-router";
+import { useRouter } from "vue-router"
 
 const router = useRouter()
 
@@ -33,12 +33,8 @@ const router = useRouter()
 
 <style scoped>
 
-.home_link {
-    text-decoration: none;
-    color: #000;
-    font-weight: 800;
-}
 .nav-link.router-link-active {
-    color: rgba(0,0,0,.9);
+    color: #000;
+    font-weight: 700;
 }
 </style>
