@@ -1,17 +1,19 @@
-import api from "./api"
+import api from "./api";
 
-const resource = "/currencies"
+const resource = "/currencies";
 
-export const getCurrencies = (iso_codes, base_currency = 'USD') => {
-    return api.get(resource)
-      .then(response => {
-        // Handle the successful response here
-        console.log("Successful response:", response.data);
-        return response.data;
-      })
-      .catch(error => {
-        // Handle the error response here
-        console.error("Error response:", error);
-        throw error;
-      });
-  };
+export const queryCurrencies = async (additionalParams = {}, additionalUri = "") => {
+
+  const fullUri = (additionalUri.length > 0) ? `${resource}/${additionalUri}` : resource; 
+
+  try {
+    const response = await api.get(fullUri, { params: additionalParams });
+    // Handle the successful response here
+    console.log("Successful response:", response.data);
+    return response.data;
+  } catch (error) {
+    // Handle the error response here
+    console.log("Error response:", error);
+    throw error;
+  }
+};
