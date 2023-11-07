@@ -4,11 +4,17 @@ import Navbar from './components/Navbar.vue';
 
 <template>
   <Navbar />
-    <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-            <component :is="Component" />
-        </transition>
-    </router-view>
+  <div class="container center-content" id="main">
+    <div class="col-lg-6">
+      <router-view v-slot="{ Component }">
+          <transition name="fade" mode="out-in">
+            <div>
+              <component :is="Component" />
+            </div>
+          </transition>
+      </router-view>
+    </div>
+  </div>
 </template>
 
 <style scoped>

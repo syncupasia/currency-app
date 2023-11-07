@@ -1,1 +1,9 @@
 .rate-arrow-icon { width:16px; height:16px }
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure the div takes up the full height of the container */
+    width: 100%;  /* Ensure the div takes up the full width of the container */
+    margin-top: 16px
+}

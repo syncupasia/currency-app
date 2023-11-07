@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="w-100 h-100 table-top-space">
       <div class="text-center" v-if="currencies && currencies.length > 0">{{ formatLastModified(currencies[0].last_modified) }} - Base Currency: {{ currencies[0].base_currency }}</div>
       <table class="table table-striped table-bordered">
           <tbody>
@@ -47,7 +47,7 @@ export default {
         const response = await queryCurrencies({iso_codes: this.isoCodes});
         this.currencies = response.data;
       } catch (error) {
-        console.error('Error fetching currencies:', error);
+        console.log('Error fetching currencies:', error);
       }
     },
     formatLastModified(dateString) {
@@ -61,3 +61,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+  .table-top-space {
+    margin-top: 16px;
+  }
+</style>
