@@ -1,11 +1,11 @@
 <template>
   <div class="form-group">
-    <label id="currencies-label">Currencies</label>
+    <label class="input-label">Currencies</label>
     <VueMultiselect
-      class="currencies-select"
-      v-if="jsonData.length > 0" 
+      class="currency-select"
+      v-if="optionData.length > 0" 
       v-model="selectedOptions" 
-      :options="jsonData" 
+      :options="optionData" 
       label="name" 
       track-by="id"
       :multiple="true"
@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      jsonData: [],
+      optionData: [],
       selectedOptions: [],
       selectedIds: [],
     };
@@ -38,11 +38,12 @@ export default {
   async mounted() {
     try {
       const response = await queryCurrencies();
-      this.jsonData = response.data.map(item => ({
+      this.optionData = response.data.map(item => ({
         id: item.iso_code,
         name: item.iso_code + ' - ' + item.name,
       }));
     } catch (error) {
+      alert('Failed. Please try again later.');
       console.log('Error fetching currencies:', error);
     }
   },
@@ -54,13 +55,3 @@ export default {
 };
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.css"></style>
-<style scoped>
-  .currencies-select {
-    width: 100%;
-    margin-top: 6px;
-    margin-bottom: 8px;
-  }
-  #currencies-label {
-    font-weight: 700;
-  }
-</style>
