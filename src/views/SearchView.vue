@@ -16,17 +16,20 @@
     <input class="btn btn-primary" type="submit" name="submit" value="Submit" @click="generateCurrenciesTable" />
   </div>
   <CurrenciesTable v-if="selectedIds.length > 0" :isoCodes="selectedIds" :key="selectedIds.join('-')"/>
+  <CurrenciesExport v-if="selectedIds.length > 0" :isoCodes="selectedIds" :key="selectedIds.join('-')" />
 </template>
 
 <script>
 import VueMultiselect from 'vue-multiselect';
 import CurrenciesTable from '../components/CurrenciesTable.vue';
+import CurrenciesExport from '../components/CurrenciesExport.vue';
 import { queryCurrencies } from '../http/currency-api';
 
 export default {
   components: {
     VueMultiselect,
     CurrenciesTable,
+    CurrenciesExport
   },
   data() {
     return {
