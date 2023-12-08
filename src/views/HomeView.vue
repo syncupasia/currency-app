@@ -1,11 +1,11 @@
 <template>
-    <CurrenciesTable :isoCodes="isoCodes" />
-    <CurrenciesExport :isoCodes="isoCodes" />
+    <CurrenciesTable :isoCodes="currencyCodes" />
+    <CurrenciesExport :isoCodes="currencyCodes" />
 </template>
 
 <script setup>
 import CurrenciesTable from '../components/CurrenciesTable.vue';
 import CurrenciesExport from '../components/CurrenciesExport.vue';
 
-const isoCodes = ['aud','cad','chf','cny','eur','gbp','hkd','jpy','nzd','usd'];
+const currencyCodes = ['aud','cad','chf','cny','eur','gbp','hkd','jpy','nzd','usd'];
 </script>

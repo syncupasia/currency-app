@@ -17,7 +17,7 @@ export default {
   methods: {
     getExportLink(format) {
       const exportUrl = import.meta.env.VITE_API_BASE_URL+'/currencies';
-      const isoCodeParams = this.isoCodes.map(isoCode => `iso_code[]=${isoCode}`).join('&');
+      const isoCodeParams = this.isoCodes.map(isoCode => `iso_codes[]=${isoCode}`).join('&');
       const formatParam = `format=${format}`;
       return `${exportUrl}?${isoCodeParams}&${formatParam}`;
     }
