@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-content-center align-items-center">
+  <div class="d-flex justify-content-center align-items-center mb-5">
     <a :href="getExportLink('excel')" download="currencies.xlsx"><img src="/images/xls.png"/></a>
     <div class="mx-2"></div>
     <a :href="getExportLink('pdf')" download="currencies.pdf"><img src="/images/pdf.png"/></a>
