@@ -12,7 +12,7 @@
                   <th class="d-none d-md-table-cell">&nbsp;</th>
               </tr>
               <tr v-for="currency in currencies" :key="currency.iso_code">
-                  <td class="d-none d-md-table-cell text-center"><img :src="getCurrencyFlagImageUrl(currency.iso_code)" onerror="this.style.display='none'"/></td>
+                  <td class="d-none d-md-table-cell text-center"><img :src="getCurrencyFlagImageUrl(currency.iso_code)" onerror="this.style.display='none'" class="flag-border"/></td>
                   <td>{{ currency.iso_code }}</td>
                   <td>{{ currency.name }}</td>
                   <td class="d-none d-md-table-cell">{{ currency.previous_rate }}</td>
@@ -70,6 +70,9 @@ export default {
 <style scoped>
   .table-top-space {
     margin-top: 16px;
+  }
+  .flag-border {
+    border: 1px solid #E8E8E8;
   }
 
 </style>
