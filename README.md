@@ -1,6 +1,6 @@
 # currency-app
 
-This template should help get you started developing with Vue 3 in Vite.
+This currency-app was developed with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
